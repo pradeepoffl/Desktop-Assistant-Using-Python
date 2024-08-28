@@ -30,22 +30,22 @@ pip install -r requirements.txt
 
 
 # To activate conda on vscode
-$conda activate base\n
-$conda env list
-$pip list 
+1. $conda activate base
+2. $conda env list
+3. $pip list 
 
 # commands to create virtual environment:
-$conda create -n assistant python=3.8
-$conda env remove --name assistant
-$pip install -r requirements.txt
+1. $conda create -n assistant python=3.8
+2. $conda env remove --name assistant
+3. $pip install -r requirements.txt
 
 # Packages to install:(pypi.org)
 
-$pip install SpeechRecognition #for speech to text
-$pip install pyttsx3 #for voice recognition 
-$pip install PyAudio 
-$pip install wikipedia
-$pip install webbrowser
+1. $pip install SpeechRecognition #for speech to text
+2. $pip install pyttsx3 #for voice recognition 
+3. $pip install PyAudio 
+4. $pip install wikipedia
+5. $pip install webbrowser
 
 
 
