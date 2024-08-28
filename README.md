@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 
 # To activate conda on vscode
-$conda activate base
+$conda activate base\n
 $conda env list
 $pip list 
 
