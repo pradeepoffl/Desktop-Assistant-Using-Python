@@ -23,9 +23,10 @@ def speak(text):
     """
     engine.say(text)
     engine.runAndWait()
-speak("I'm your desktop assistant, How can I help you? ")
+#speak("I'm your desktop assistant, How can I help you? ")
 
 # speech recognition function
+
 
 def takeCommand():
     """
@@ -40,14 +41,65 @@ def takeCommand():
         try:
             print("Recognizing..")
             query=r.recognize_google(audio,language='en-in')
-            print(f'user said:{query}\n')
+            print(f'user said : {query}\n')
         
         except Exception as e:
             print("Can you say that again please...")
             return "None"
         return query
+#text=takeCommand()
+#speak(text)
 
-text=takeCommand()
-speak(text)
+def wish_me():
+    hour = (datetime.datetime.now().hour)
+    if hour>=0 and hour<12:
+        speak("Good moring pradeep, how are you doing ? ")
+    elif hour>=12 and hour<18:
+        speak("Good Afternoon pradeep, how are you doing ")
+    else:
+        speak("Good Evening pradeep, how are you doing")
 
-#HEllo
+    speak("I am your Desktop assistant. how can i help you?")
+
+
+
+if __name__ == "__main__": 
+    """
+    all the defined function are call here.
+    """
+    wish_me()
+    while True:
+        
+        #speak("I'm your desktop assistant, How can I help you? ")
+        query=takeCommand().lower()
+        print(query)
+
+        #condition approach zujagar approach
+
+        if "wikipedia" in query:
+            speak("Searching wikipedia")
+            query = query.replace('wikipedia','')
+            results=wikipedia.summary(query,sentences=2)
+            speak("According to wikipedia")
+            print(results)
+            speak(results)
+
+        elif "youtube" in query:
+            speak("opening youtube")
+            webbrowser.open("youtube.com")
+
+        elif "google" in query:
+            speak("opening google")
+            webbrowser.open("google.com")
+
+        elif "time" in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            speak(f'now the time is {strTime}')
+
+        elif "ok bye" or "bye" or "go to sleep" in query:
+            speak("Thanks bye Take care")
+            exit()
+
+
+
+
