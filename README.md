@@ -58,6 +58,3 @@ pip install -r requirements.txt
 1. Normal execution:- $python app.py
 2. streamlit execution:- $streamlit run app.py
 
-## api key:
-
-AIzaSyC8FJo7FjAVpG_cLGt9KYF1NikyVBefpPA
